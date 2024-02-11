@@ -1,7 +1,13 @@
 //TODO: seeds script should come here, so we'll be able to put some data in our local env
+
 const mongoose = require("mongoose");
 const connection = process.env.MONGODB_URI;
 mongoose.connect(connection);
+
+require("./models/User");
+require("./models/Item");
+require("./models/Comment");
+
 const User = mongoose.model("User");
 const Item = mongoose.model("Item");
 const Comment = mongoose.model("Comment");
